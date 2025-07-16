@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Learning Roadmap for NLP</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            position: relative;
+        }
+        
+        .contributors {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #f8f9fa;
+            color: #333;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 10px;
+            border: 1px solid #e9ecef;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .contributors .team-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #2980b9;
+        }
+        
+        .contributors div {
+            margin: 2px 0;
+        }
+        
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            margin-top: 20px;
+            position: relative;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-right: 150px;
+        }
+        h2 {
+            color: #34495e;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #2980b9;
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        .video-link {
+            background: #e8f4f8;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border-left: 4px solid #3498db;
+        }
+        .video-link a {
+            color: #2980b9;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .video-link a:hover {
+            text-decoration: underline;
+        }
+        ul {
+            background: #f8f9fa;
+            padding: 15px 30px;
+            border-radius: 5px;
+            margin: 15px 0;
+        }
+        li {
+            margin: 8px 0;
+        }
+        .highlight {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 4px solid #ffc107;
+            margin: 15px 0;
+        }
+        .step {
+            counter-increment: step-counter;
+            margin: 25px 0;
+        }
+        .step:before {
+            content: "Step " counter(step-counter);
+            background: #3498db;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .container {
+            counter-reset: step-counter;
+        }
+        
+        /* Mobile Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .container {
+                padding: 20px;
+                margin-top: 10px;
+            }
+            
+            .contributors {
+                position: static;
+                margin-bottom: 20px;
+                text-align: center;
+                float: none;
+            }
+            
+            h1 {
+                margin-right: 0;
+                font-size: 1.5em;
+            }
+            
+            h2 {
+                font-size: 1.2em;
+                padding: 8px 12px;
+            }
+            
+            h3 {
+                font-size: 1.1em;
+            }
+            
+            table {
+                font-size: 14px;
+            }
+            
+            th, td {
+                padding: 8px;
+            }
+            
+            .video-link {
+                padding: 8px;
+            }
+            
+            .highlight {
+                padding: 12px;
+            }
+            
+            .step:before {
+                font-size: 12px;
+                padding: 3px 8px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 1.3em;
+            }
+            
+            h2 {
+                font-size: 1.1em;
+                padding: 6px 10px;
+            }
+            
+            h3 {
+                font-size: 1em;
+            }
+            
+            table {
+                font-size: 12px;
+            }
+            
+            th, td {
+                padding: 6px;
+            }
+            
+            .contributors {
+                font-size: 9px;
+                padding: 8px 12px;
+            }
+            
+            .copyright-text {
+                font-size: 11px;
+            }
+            
+            .made-by {
+                font-size: 7px;
+            }
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            border-top: 2px solid #3498db;
+        }
+        
+        .copyright-text {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .made-by {
+            font-size: 8px;
+            color: #999;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="contributors">
+            <div class="team-title">Team:</div>
+            <div>• Inzamam</div>
+            <div>• Moshaddaque</div>
+            <div>• Rozi</div>
+            <div>• Jesi</div>
+        </div>
+        
+        <h1>🎓 Python Learning Roadmap for NLP</h1>
+        
+        <div class="highlight">
+             <strong>Gender Bias mitigation in NLP</strong> করতে গেলে Python-এ কিছু নির্দিষ্ট বিষয় শেখা বাধ্যতামূলক। নিচে step-by-step একটা roadmap দিয়েছি Python শেখার জন্য, যা গবেষণায় দরকার হবে। সঙ্গে YouTube প্লেলিস্ট বা ভিডিও লিংক ও দিয়ে দিয়েছি — যেন শেখা সহজ হয়।
+        </div>
+
+        <h2>🎓 Python শেখার Complete Roadmap (NLP + Gender Bias কাজের জন্য)</h2>
+
+        <div class="step">
+            <h3>✅ Step 1: Python Programming এর ভিত্তি (Basics)</h3>
+            
+            <table>
+                <tr>
+                    <th>শেখার বিষয়</th>
+                    <th>দরকার কেন</th>
+                </tr>
+                <tr>
+                    <td>Variables, Data Types</td>
+                    <td>টেক্সট ও ডেটা হ্যান্ডল করার জন্য</td>
+                </tr>
+                <tr>
+                    <td>Loops (for, while)</td>
+                    <td>Token iterate করতে</td>
+                </tr>
+                <tr>
+                    <td>Functions</td>
+                    <td>Data pre-processing মডুলার করতে</td>
+                </tr>
+                <tr>
+                    <td>Lists, Dicts</td>
+                    <td>Dataset format ও mapping-এর জন্য</td>
+                </tr>
+                <tr>
+                    <td>File Handling</td>
+                    <td>CSV/JSON/TSV ডেটা read/write করতে</td>
+                </tr>
+            </table>
+
+            <div class="video-link">
+                <!-- 📺 <strong>ভিডিও (বাংলায়)</strong>:<br> -->
+                👉 <a href="https://youtube.com/playlist?list=PLKdU0fuY4OFcot0zyVbM1-zKf_eCUK4zQ&si=pV9N21pSwRZdyFzs ">Python Programming বাংলা  | Day-0 to Day-43</a>
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>✅ Step 2: NumPy এবং Pandas</h3>
+            
+            <table>
+                <tr>
+                    <th>শেখার বিষয়</th>
+                    <th>দরকার কেন</th>
+                </tr>
+                <tr>
+                    <td>NumPy Arrays</td>
+                    <td>মডেল ইনপুট তৈরি করতে</td>
+                </tr>
+                <tr>
+                    <td>Pandas DataFrames</td>
+                    <td>Dataset clean, manipulate করতে</td>
+                </tr>
+                <tr>
+                    <td>Filtering, GroupBy</td>
+                    <td>Pronoun filtering বা gender swaps</td>
+                </tr>
+            </table>
+
+            <div class="video-link">
+                👉 <a href="https://youtube.com/playlist?list=PLKdU0fuY4OFdsmcM817qp1L3ngU5amkak&si=KRgleDcJPzZE9fHh">Pandas টিউটোরিয়াল (Bangla)</a> <br>
+                👉 <a href="https://youtu.be/qrMnoY8qBJM?si=3dL1WnjaoX4SPT-i">Pandas টিউটোরিয়াল (Hindi) </a> <br>
+                👉 <a href="https://youtube.com/playlist?list=PLKnIA16_Rmvb-ToL3RQ_bwxG4_ND-0-DT&si=H8PEXIehSrc66-6q">NumPy টিউটোরিয়াল (Hindi) </a> <br>
+                👉 <a href="https://youtube.com/playlist?list=PLF-F70WLa6yObTJddaaUoyAO7lTttQ3ay&si=X-nDBJHoQygDPV_-">NumPy টিউটোরিয়াল (Bangla) </a>
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>✅ Step 3: Natural Language Processing (NLP)</h3>
+            
+            <table>
+                <tr>
+                    <th>শেখার বিষয়</th>
+                    <th>দরকার কেন</th>
+                </tr>
+                <tr>
+                    <td>Tokenization</td>
+                    <td>শব্দ ভাঙা ও প্রিপ্রসেসিং</td>
+                </tr>
+                <tr>
+                    <td>Stopword Removal</td>
+                    <td>বিশ্লেষণে অপ্রয়োজনীয় শব্দ বাদ দেওয়া</td>
+                </tr>
+                <tr>
+                    <td>Word Embeddings</td>
+                    <td>Gender vectors ধরতে</td>
+                </tr>
+                <tr>
+                    <td>Transformers</td>
+                    <td>BERT, RoBERTa মডেল ব্যবহার করতে</td>
+                </tr>
+            </table>
+
+            <div class="video-link">
+                
+                👉 <a href="https://youtu.be/dIUTsFT2MeQ?si=-Njo09JwFAWsBPZr">Natural Language Processing (NLP) with spaCy & Python - Course for Beginners</a><br>
+                👉 <a href="https://youtube.com/playlist?list=PLo2EIpI_JMQtNtKNFFSMNIZwspj8H7-sQ&si=0fpOS6GMgA44tYRQ">HuggingFace Transformers Intro</a>
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>✅ Step 4: PyTorch or TensorFlow (Deep Learning)</h3>
+            
+            <p>তুমি যদি নিজেই মডেল ট্রেইন করো (debiasing সহ), তাহলে PyTorch শেখা ভালো।</p>
+            
+            <p><strong>📚 শিখতে হবে:</strong></p>
+            <ul>
+                <li>Model architecture define করা</li>
+                <li>Custom loss function বানানো</li>
+                <li>Training loop লেখা</li>
+            </ul>
+
+            <div class="video-link">
+                
+                👉 <a href="https://youtube.com/playlist?list=PLKnIA16_Rmvboy8bmDCjwNHgTaYH2puK7&si=tmG3_FgYacyi30qu">PyTorch Tutorial for Beginners</a><br>
+                👉 <a href="https://youtu.be/wRNPIzb9OC4?si=9Q3i2ZMgPYlBN66C">PyTorch NLP Tutorial with LSTM</a>
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>✅ Step 5: HuggingFace Transformers</h3>
+            
+            <p>এই লাইব্রেরি দিয়েই তুমি:</p>
+            <ul>
+                <li>Pretrained model লোড করতে পারবে</li>
+                <li>Custom dataset-এ train করতে পারবে</li>
+                <li>Debiasing কাজ করতে পারবে</li>
+            </ul>
+
+            <div class="video-link">
+                
+                👉 <a href="https://youtube.com/playlist?list=PLo2EIpI_JMQtNtKNFFSMNIZwspj8H7-sQ&si=0fpOS6GMgA44tYRQ">HuggingFace Transformers Full Course</a><br>
+                👉 <a href="https://youtu.be/4QHg8Ix8WWQ?si=xpe5BRVfK6YeH_R5">Fine-tune BERT with HuggingFace</a>
+            </div>
+        </div>
+
+        <div class="step">
+            <h3>✅ Step 6: Visualization + Evaluation</h3>
+            
+            <table>
+                <tr>
+                    <th>শেখার বিষয়</th>
+                    <th>দরকার কেন</th>
+                </tr>
+                <tr>
+                    <td>Matplotlib/Seaborn</td>
+                    <td>Bias graph visualize করতে</td>
+                </tr>
+                <tr>
+                    <td>Sklearn metrics</td>
+                    <td>Accuracy, precision, recall ইত্যাদি</td>
+                </tr>
+            </table>
+
+            <div class="video-link">
+                
+                👉 <a href="https://youtu.be/q68Qundmans?si=pcRHrtuZnQ8hxM8u">Data Visualization in Python (English)</a> <br>
+                👉 <a href="https://youtu.be/IT3UAHhLu08?si=l7Lnts6LB3qmWI-e">Data Visualization in Python (Hindi)</a>
+            </div>
+        </div>
+
+        <h2>🧠প্র্যাকটিস করার সাইট:</h2>
+        
+        <ul>
+            <li><strong><a href="https://colab.research.google.com">Google Colab</a></strong> – কোড রান করার জন্য অনলাইন প্ল্যাটফর্ম</li>
+            <li><strong><a href="https://www.kaggle.com">Kaggle</a></strong> – NLP ডেটাসেট ও প্রজেক্ট সেকশন</li>
+        </ul>
+
+        <div class="copyright">
+            <div class="copyright-text">
+                © 2025 All rights reserved. This content is protected by copyright law. 
+                Unauthorized reproduction or distribution is prohibited.
+            </div>
+            <div class="made-by">
+                Made by Inzamam Muhit
+            </div>
+        </div>
+    </div>
+</body>
+</html>
